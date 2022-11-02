@@ -21,7 +21,7 @@ public class BasicSeleniumTest {
     @AfterEach
     public void cleanup(){
         System.out.println("cleanup");
-        //driver.quit();
+        driver.quit();
     }
 // bootcamp@mojix44.com
 //123345
@@ -32,7 +32,7 @@ public class BasicSeleniumTest {
         Thread.sleep(5000);
         driver.findElement(By.xpath("//img[contains(@src,'pagelogin')]")).click();
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxEmail")).sendKeys("bootcamp@mojix44.com");
-        driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword")).sendKeys("123345");
+        driver.findElement(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword")).sendKeys("12345");
         driver.findElement(By.id("ctl00_MainContent_LoginControl1_ButtonLogin")).click();
         Thread.sleep(1000);
         Assertions.assertTrue(driver.findElement(By.id("ctl00_HeaderTopControl1_LinkButtonLogout")).isDisplayed()
