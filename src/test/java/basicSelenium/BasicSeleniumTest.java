@@ -50,20 +50,17 @@ public class BasicSeleniumTest {
         //tarea
         String tareaNueva = "tarea"+new Date().getTime();
         for(int i=0 ; i <= 4 ; i+=1 ){
-            System.out.println(i);
             driver.findElement(By.id("NewItemContentInput")).sendKeys(tareaNueva);
             driver.findElement(By.id("NewItemAddButton")).click();
             Thread.sleep(200);
         }
         Thread.sleep(1000);
         int actualTareas = driver.findElements(By.xpath("//ul[@id='mainItemList']/li")).size();
-        System.out.println(actualTareas);
         Thread.sleep(1000);
         Assertions.assertTrue(actualTareas >= 1,"no hay elementos");
 
         //UPDATE
         String nameLi = driver.findElement(By.xpath("//ul[@id='mainItemList']/li[1]")).getText();
-        System.out.println(nameLi);
         driver.findElement(By.xpath("//ul[@id='mainItemList']/li[1]")).click();
         String updateJobs = tareaNueva+"ACTUALIZACION";
         Thread.sleep(1000);
